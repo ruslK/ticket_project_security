@@ -8,11 +8,11 @@ public class IndexController {
 
     @GetMapping(value = {"/", "/login"})
     public String getStartPoint() {
-        return "index";
+        return "/index";
     }
 
     @GetMapping("/welcome")
     public String getWelcome() {
-        return "welcome";
+        return "/welcome";
     }
 }
