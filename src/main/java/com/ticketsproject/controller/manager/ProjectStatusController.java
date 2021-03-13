@@ -21,7 +21,7 @@ public class ProjectStatusController {
     @GetMapping("/status")
     public String getListProjectStatuses(Model model) {
         model.addAttribute("projects", projectService.getAllProjectByManagerId());
-        return "manager/projectStatus";
+        return "/manager/projectStatus";
     }
 
 

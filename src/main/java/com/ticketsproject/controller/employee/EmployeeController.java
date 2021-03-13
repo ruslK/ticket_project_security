@@ -30,7 +30,7 @@ public class EmployeeController {
     public String getCreateProjectsPage(Model model) {
         List<TaskDTO> tasks = taskService.listAllTaskByStatusIsNot(Status.COMPLETE);
         model.addAttribute("tasks", tasks);
-        return "employee/pendingTask";
+        return "/employee/pendingTask";
     }
 
     @GetMapping("/tasks/update/{id}")
@@ -41,7 +41,7 @@ public class EmployeeController {
         model.addAttribute("projects", projectService.listOfProjectsNonComplete());
         model.addAttribute("statutes", Status.values());
 
-        return "employee/updateTasks";
+        return "/employee/updateTasks";
     }
 
     @PostMapping("/tasks/update/{id}")
@@ -56,7 +56,7 @@ public class EmployeeController {
     public String archive(Model model) {
         List<TaskDTO> tasks = taskService.listAllTaskByStatus(Status.COMPLETE);
         model.addAttribute("tasks", tasks);
-        return "employee/archive";
+        return "/employee/archive";
     }
 
 }

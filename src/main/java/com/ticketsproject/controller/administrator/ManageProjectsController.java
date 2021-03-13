@@ -26,7 +26,7 @@ public class ManageProjectsController {
         model.addAttribute("newProject", new ProjectDTO());
         model.addAttribute("managers", userService.findAllManagers());
         model.addAttribute("allProject", projectService.listOfProjects());
-        return "administrator/createProject";
+        return "/administrator/createProject";
     }
 
     @PostMapping("/projects")
@@ -46,7 +46,7 @@ public class ManageProjectsController {
         model.addAttribute("newProject", projectService.findByProjectCode(projectCode));
         model.addAttribute("managers", userService.findAllManagers());
         model.addAttribute("allProject", projectService.listOfProjects());
-        return "administrator/createProject";
+        return "/administrator/createProject";
     }
 
     @GetMapping("/projects/complete/{projectCode}")

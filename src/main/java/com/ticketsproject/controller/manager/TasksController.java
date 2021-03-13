@@ -29,7 +29,7 @@ public class TasksController {
         model.addAttribute("projects", projectService.listOfProjectsNonComplete());
         model.addAttribute("employees", userService.findEmployees());
         model.addAttribute("allTask", taskService.listOfTasks());
-        return "manager/tasks";
+        return "/manager/tasks";
     }
 
     @PostMapping({"/tasks", "/tasks/update/{id}"})
@@ -51,6 +51,6 @@ public class TasksController {
         model.addAttribute("projects", projectService.listOfProjectsNonComplete());
         model.addAttribute("employees", userService.findEmployees());
         model.addAttribute("allTask", taskService.listAllTaskByStatusIsNot(Status.COMPLETE));
-        return "manager/tasks";
+        return "/manager/tasks";
     }
 }
