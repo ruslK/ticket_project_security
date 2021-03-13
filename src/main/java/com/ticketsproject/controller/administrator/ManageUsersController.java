@@ -28,7 +28,7 @@ public class ManageUsersController {
         model.addAttribute("newUser", new UserDTO());
         model.addAttribute("allUsers", userService.listAllUsers());
         model.addAttribute("roles", roleService.listAllRoles());
-        return "administrator/createUser";
+        return "/administrator/createUser";
     }
 
     @PostMapping("/users")
@@ -42,7 +42,7 @@ public class ManageUsersController {
         model.addAttribute("newUser", userService.findByUserName(id));
         model.addAttribute("allUsers", userService.listAllUsers());
         model.addAttribute("roles", roleService.listAllRoles());
-        return "administrator/createUser";
+        return "/administrator/createUser";
     }
 
     @GetMapping("/users/delete/{id}")
